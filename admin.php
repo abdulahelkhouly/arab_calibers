@@ -8,7 +8,7 @@ session_start();
 {
 ?>
 <p class="alert alert-success">
-	Welcome Mr <?php echo $_SESSION['user']; ?> 
+	Welcome Mr <?php echo $_SESSION['full_name']; ?> 
 	<a href="log_out.php" class="btn btn-primary" style="margin-left: 8px;">Log Out</a>
 
 </p>

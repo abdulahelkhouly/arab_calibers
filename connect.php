@@ -4,8 +4,8 @@ $servername = "localhost";
 $username = "root";
 $db_name = "arab_calibers";
 
-$conn = new mysqli($servername, $username, null, $db_name);
-if ($conn->connect_error)
+$mysqli = new mysqli($servername, $username, null, $db_name);
+if ($mysqli->connect_error)
 {
-	die("error" . $conn->connect_error);
+	die("error" . $mysqli->connect_error);
 }

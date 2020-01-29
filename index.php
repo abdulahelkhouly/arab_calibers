@@ -8,12 +8,15 @@ session_start();
  	$password = $_POST['pass'];
 
 
- 	$sql = "SELECT user_name, password FROM users WHERE user_name = '$user_name' AND password = '$password' AND group_id = '1'";
- 	$result = $conn->query($sql);
+ 	$query = "SELECT id, user_name, full_name FROM users WHERE user_name = '$user_name' AND password = '$password' AND group_id = '1'";
+ 	$result = $mysqli->query($query);
+ 	$row = $result->fetch_row();
 
  	if ($result->num_rows > 0)
  	{
- 		$_SESSION['user'] = $user_name;
+ 		$_SESSION['user'] = $row[1];
+ 		$_SESSION['id'] = $row[0];
+ 		$_SESSION['full_name'] = $row[2]; 
 		header('location: admin.php');
 	}
  	else 
